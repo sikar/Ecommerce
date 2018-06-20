@@ -1,0 +1,14 @@
+Ecommerce Module
+1. Frontend
+    Home
+    Product List
+    Product Details
+    Add to cart
+    Cart View
+    Checkout - User Registration
+    about
+    Term and Condition
+    Contact Us
+
+2. Backend
+    Dashboard
