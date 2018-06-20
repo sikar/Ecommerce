@@ -3,12 +3,22 @@ Ecommerce Module
     Home
     Product List
     Product Details
-    Add to cart
+        Add to cart
     Cart View
-    Checkout - User Registration
+    Checkout - User/Order Registration
     about
     Term and Condition
     Contact Us
 
-2. Backend
+2. Backend - admin
     Dashboard
+    Products Module
+        Add, Edit, Delete
+    Order Module
+        Add, Edit, Delete
+    Users Module
+        Add, Edit, Delete
+
+    Website Settings
+    Logout
+    
