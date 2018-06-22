@@ -1,0 +1,9 @@
+mixin card(icon, title, ctitle, ctext, url, btnname)
+    .card
+        h5.card-header
+            i(class='fa fa-'+icon)
+            |  #{title}
+        .card-body
+            h5.card-title=ctitle
+            p.card-text=ctext
+            a.btn.btn-primary(href=url)=btnname

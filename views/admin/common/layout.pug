@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/font-awesome.min.css")
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    include function.pug
+    include header.pug
+
+    .container
+      block content
+
+    script(src="/js/jquery.min.js")
+    script(src="/js/bootstrap.min.js")
