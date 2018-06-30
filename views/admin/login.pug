@@ -1,0 +1,18 @@
+extends common/layout.pug
+
+block content
+  .row.justify-content-md-center
+    .col-xs-12.col-sm-4
+      h1.text-center= title
+      form(action="/admin/login", method="post")
+        .form-group
+          label(for='exampleInputEmail1') Email address
+          input#exampleInputEmail1.form-control(type='email', name="user", aria-describedby='emailHelp', placeholder='Enter email')
+          small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+        .form-group
+          label(for='exampleInputPassword1') Password
+          input#exampleInputPassword1.form-control(type='password', name="pass", placeholder='Password')
+        .form-group.form-check
+          input#exampleCheck1.form-check-input(type='checkbox', name="remember")
+          label.form-check-label(for='exampleCheck1') Remember Me
+        button.btn.btn-primary(type='submit') Submit
