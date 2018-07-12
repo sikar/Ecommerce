@@ -10,11 +10,20 @@ block content
       th Description
       th Status
       th Actions
-    tr
-      td Home Page
-      td demo page, home page
-      td This is the Demo Home Page
-      td public
-      td 
-        a.btn.btn-info(href="/page/edit/1") Edit
-        a.btn.btn-danger(href="/page/delete/1") Delete
+    for data in datas
+      tr
+        td= data.title
+        td= data.key
+        td= data.desc
+        td= data.status
+        td 
+          a.btn.btn-info(href="/admin/page/edit/"+data._id) Edit
+          a.btn.btn-danger(href="/admin/page/delete/"+data._id) Delete
+    //- tr
+    //-   td Home Page
+    //-   td demo page, home page
+    //-   td This is the Demo Home Page
+    //-   td public
+    //-   td 
+    //-     a.btn.btn-info(href="/admin/page/edit/1") Edit
+    //-     a.btn.btn-danger(href="/admin/page/delete/1") Delete

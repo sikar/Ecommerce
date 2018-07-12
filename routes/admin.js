@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var PageController = require('../controller/admin/page');
+var PageController = require('../controllers/admin/page');
 
-router.get('/', (req, res, next)=> {
+router.get('/', function(req, res, next) {
     res.render('admin/index', { title: 'Admin Area.' });
 });
 

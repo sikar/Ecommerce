@@ -1,4 +1,35 @@
 extends ../common/layout.pug
 
 block content
-  h1= title
+  h2= title
+
+  form(action="/admin/login", method="post")
+    .form-group
+      label(for='title') Title
+      input#title.form-control(type='text', name="title", aria-describedby='title', placeholder='Enter Page Title')
+
+    .form-group
+      label(for='keyword') Keywords
+      input#keyword.form-control(type='text', name="keyword", placeholder='Page Keyords')
+
+    .form-group
+      label(for='description') Short Description
+      input#description.form-control(type='text', name="description", placeholder='Page Description')
+
+    .form-group
+      label(for='contents') Contents
+      textarea#contents.form-control(type='text', name="content", placeholder='Page Contents')
+
+    .form-group.form-check
+      input#private.form-check-input(type='radio', name="status", value='private')
+      label.form-check-label(for='private') Private
+
+    .form-group.form-check
+      input#draft.form-check-input(type='radio', name="status", value='draft')
+      label.form-check-label(for='draft') Draft
+
+    .form-group.form-check
+      input#public.form-check-input(type='radio', name="status", value='public')
+      label.form-check-label(for='public') Public
+
+    button.btn.btn-primary(type='submit') Submit

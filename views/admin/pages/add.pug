@@ -3,7 +3,7 @@ extends ../common/layout.pug
 block content
   h2= title
 
-  form(action="/admin/login", method="post")
+  form(action="/admin/page/add", method="post")
     .form-group
       label(for='title') Title
       input#title.form-control(type='text', name="title", aria-describedby='title', placeholder='Enter Page Title')
