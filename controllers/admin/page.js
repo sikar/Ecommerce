@@ -34,11 +34,33 @@ function PageController(router){
   });
 
   page.get('/page/edit/:id', function (req, res, next) {
-      res.render('admin/pages/edit', {title: 'Page Edit'});
+      Page.findById(req.params.id, function(err, result){
+          res.render('admin/pages/edit', { title: 'Page Edit', page: result });
+      });
+  });
+
+  page.post('/page/edit/:id', function(req, res, nect){
+      Page.findByIdAndUpdate(req.params.id, {
+          title: req.body.title,
+          key: req.body.keyword,
+          desc: req.body.description,
+          content: req.body.content,
+          status: req.body.status
+      }, function(err, result){
+          if(err){
+            console.log();
+          }
+          res.redirect('/admin/pages');
+      });
   });
 
   page.get('/page/delete/:id', function (req, res, next) {
-      res.render('admin/pages/edit', {title: 'Page Edit'});
+      Page.deleteOne({_id: req.params.id}, function(err){
+          if(err){
+              console.log(err);    
+          }
+          res.redirect('/admin/pages');
+      });
   });
 
   return page;

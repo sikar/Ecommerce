@@ -3,33 +3,36 @@ extends ../common/layout.pug
 block content
   h2= title
 
-  form(action="/admin/login", method="post")
+  form(action="/admin/page/edit/"+page._id, method="post")
     .form-group
       label(for='title') Title
-      input#title.form-control(type='text', name="title", aria-describedby='title', placeholder='Enter Page Title')
+      input#title.form-control(type='text', name="title", aria-describedby='title', placeholder='Enter Page Title', value=page.title)
 
     .form-group
       label(for='keyword') Keywords
-      input#keyword.form-control(type='text', name="keyword", placeholder='Page Keyords')
+      input#keyword.form-control(type='text', name="keyword", placeholder='Page Keyords', value=page.key)
 
     .form-group
       label(for='description') Short Description
-      input#description.form-control(type='text', name="description", placeholder='Page Description')
+      input#description.form-control(type='text', name="description", placeholder='Page Description', value=page.desc)
 
     .form-group
       label(for='contents') Contents
-      textarea#contents.form-control(type='text', name="content", placeholder='Page Contents')
+      textarea#contents.form-control(type='text', name="content", placeholder='Page Contents')=page.content
 
     .form-group.form-check
-      input#private.form-check-input(type='radio', name="status", value='private')
+      - private = (page.status == 'private')? true : false;
+      input#private.form-check-input(type='radio', name="status", value='private', checked=private)
       label.form-check-label(for='private') Private
 
     .form-group.form-check
-      input#draft.form-check-input(type='radio', name="status", value='draft')
+      - draft = (page.status == 'draft')? true : false;
+      input#draft.form-check-input(type='radio', name="status", value='draft', checked=draft)
       label.form-check-label(for='draft') Draft
 
     .form-group.form-check
-      input#public.form-check-input(type='radio', name="status", value='public')
+      - public = (page.status == 'public')? true : false;
+      input#public.form-check-input(type='radio', name="status", value='public', checked=public)
       label.form-check-label(for='public') Public
 
     button.btn.btn-primary(type='submit') Submit
